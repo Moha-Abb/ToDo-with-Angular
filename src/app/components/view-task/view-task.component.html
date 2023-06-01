@@ -1,0 +1,14 @@
+<div class="card mt-3" [ngClass]="{
+                          'bg-success':task.attributes.complete,
+                          'text-white':task.attributes.complete,
+                          'bg-warning':!task.attributes.complete
+                        }">
+    <div class="card-body">
+        <h3>{{task.attributes.title}}</h3>
+        <p>{{task.attributes.content}}</p>
+
+        <button (click)="deleteTask(task.id)" class="btn btn-danger btn-sm">Delete</button>
+
+        <button [routerLink]="['/update-todo', task.id]" class="btn btn-primary ms-2 btn-sm">Update</button>
+    </div>
+</div>

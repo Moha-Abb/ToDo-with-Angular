@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card my-4 border-0 shadow-sm">
+                <div class="card-body">
+                    <h3>All Tasks</h3>
+                    <div *ngIf="tasks.length==0" class="alert alert-danger mt-3">
+                        <h3>No tasks to do</h3>
+                        <p> Try to add a new task</p>
+                        <button [routerLink]="'/add-todo'" class="btn btn-success btn-sm">
+                            Add New</button>
+                    </div>
+                    <app-view-task *ngFor="let task of tasks" [task]="task"></app-view-task>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
